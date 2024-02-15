@@ -27,8 +27,16 @@ def convert_schedule(input_array):
     output_array = []
 
     for schedule in input_array:
+        print(schedule)
         parts = schedule.split()
-
+        if 'ف' in parts:
+            parts.remove('ف')
+        if 'ز' in parts:
+            parts.remove('ز')
+        if 'نیمه2' in parts:
+            parts.remove('نیمه2')
+        if 'ت' in parts:
+            parts.remove('ت')
         day = " ".join(parts[:-1])  # Combine day parts
         time_range = parts[-1].split('-')
 
